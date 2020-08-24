@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.aastha'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "org.apache.activemq:activemq-client:5.16.0"
+	implementation "org.apache.activemq:activemq-jms-pool:5.16.0"
+	implementation "org.apache.commons:commons-lang3:3.0"
+	implementation "org.springframework:spring-jms:5.2.7.RELEASE"
+	implementation "javax.jms:javax.jms-api:2.0.1"
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}

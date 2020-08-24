@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: aastha-communication
+  activemq:
+    broker-url: failover:(tcp://localhost:61616)?timeout=25000
+    packages:
+      trust-all: true
+
+aastha:
+  jms:
+    timeout: 1000
+    listener:
+      threads: 10
